@@ -29,9 +29,13 @@ const navMenu = document.querySelector('#navbar__list');
  * Start Helper Functions
  * 
 */
-function isInViewport(ele) {
-    let rectObject = ele.getBoundingClientRect();
-    return(rectObject.top >= 0 );
+function isInViewport(elem) {
+    var rect = elem.getBoundingClientRect();
+    var elemTop = rect.top;
+    var elemBottom = rect.bottom;
+    var isVisible = (elemTop >= 0) && (elemBottom <= window.innerHeight);
+    return isVisible;
+
 }
 
 
