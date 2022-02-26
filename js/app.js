@@ -30,10 +30,10 @@ const navMenu = document.querySelector('#navbar__list');
  * 
 */
 function isInViewport(elem) {
-    var rect = elem.getBoundingClientRect();
-    var elemTop = rect.top;
-    var elemBottom = rect.bottom;
-    var isVisible = (elemTop >= 0) && (elemBottom <= window.innerHeight);
+    let rect = elem.getBoundingClientRect();
+    let elemTop = rect.top;
+    let elemBottom = rect.bottom;
+    let isVisible = (elemTop >= 0) && (elemBottom <= window.innerHeight);
     return isVisible;
 
 }
@@ -77,7 +77,7 @@ function addScrollToAction(element){
     element.addEventListener('click',function(event){
         let dataset = event.target.dataset.id;
         let section  = document.getElementById(dataset);
-        section.scrollIntoView(); 
+        section.scrollIntoView({behavior: "smooth"}); 
     });
 }
 /**
